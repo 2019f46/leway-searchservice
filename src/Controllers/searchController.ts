@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import { IProductRepo, ProductRepo } from "Repository/ProductRepo";
 
 /**
  * The search controller, that will serve the endpoint /api/search
@@ -7,10 +8,12 @@ import { Request, Response, Router } from "express";
 class SearchController {
   /** Router */
   public searchRouter: Router;
+  public productRepo: IProductRepo;
 
   public constructor() {
     this.searchRouter = Router();
     this.route();
+    this.productRepo = new ProductRepo();
   }
 
   /**
@@ -19,8 +22,12 @@ class SearchController {
    * @param res A list of products matching the query, with locations
    * @param next Not used
    */
-  public getProducts(req: Request, res: Response, next){
+  public getProducts(req: Request, res: Response, next) {
     let query = req.params.query;
+
+    this.productRepo.findProducts(query).then(prod => {
+      res.send(prod);
+    });
 
     // Get the product list
 
