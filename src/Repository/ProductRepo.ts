@@ -1,6 +1,6 @@
 import { IProduct } from "Models/product.model";
 import axios from "axios";
-import { SharedStrings } from "Shared/SharedStrings";
+import { SharedStrings } from "../Shared/SharedStrings";
 
 /** Product Repository Interface */
 export interface IProductRepo {
@@ -19,10 +19,10 @@ export class ProductRepo implements IProductRepo {
      * @returns Promise, with an array of products.
      */
     public findProducts = async (product: string): Promise<IProduct[]> => {
-        let url: string = `${SharedStrings.searchProductUrl}/${product}`
+        let url: string = `${SharedStrings.searchProductUrl}${product}`
         
         let response = await axios.get(url);
 
-        return [{ name: "ggWP" }] as any;
+        return response.data;
     }
 }

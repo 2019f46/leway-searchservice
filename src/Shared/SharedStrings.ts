@@ -6,10 +6,10 @@
 export class SharedStrings {
   // CONNECTION TO PRODUCT SERVICE
   /** URL for the product service */
-  public static productServiceConnection: String = "lewayfps.azurewebsites.com";
+  //public static productServiceConnection: String = "lewayfps.azurewebsites.com";
+  public static productServiceConnection: String = "http://localhost:3001";
   /** API endpoint for getting products on the product service */
-  public static searchProductUrl: String =
-    SharedStrings.productServiceConnection + "/api/product/";
+  public static searchProductUrl: String = `${SharedStrings.productServiceConnection}/api/product/`;
 
   // DB
   /** Database name */

@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import searchController from "./Controllers/searchController";
+import locationController from "./Controllers/locationController";
 
 class App {
 
@@ -22,7 +23,8 @@ class App {
     }
 
     private setRoutes(): void {
-        this.app.use('/api/test', searchController);
+        this.app.use('/api/search', searchController);
+        this.app.use('/api/location', locationController);
     }
 }
 

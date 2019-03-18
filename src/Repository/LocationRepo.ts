@@ -1,10 +1,12 @@
 import { IProductLocation, ProductLocationModel } from "../Models/location.model";
 import { connect, connection } from "mongoose";
-import { SharedStrings } from "Shared/SharedStrings";
+import { SharedStrings } from "../Shared/SharedStrings";
 
 /** Location Repository Interface */
 export interface ILocationRepo {
-    findProducLocations: (ids: String[]) => IProductLocation[]
+    findProductLocations: (ids: String[]) => IProductLocation[];
+    addOrUpdateProductLocation: (l: IProductLocation) => IProductLocation;
+    getAll: () => IProductLocation[];
 }
 
 /**
@@ -30,7 +32,7 @@ export class LocationRepo implements ILocationRepo {
      * @param ids List of IDs to find
      * @returns IProductLocation array, with all matching locations
      */
-    public findProducLocations(ids: String[]): IProductLocation[] {
+    public findProductLocations(ids: String[]): IProductLocation[] {
         let results: IProductLocation[] = [];
 
         for (let id in ids) {
@@ -42,5 +44,30 @@ export class LocationRepo implements ILocationRepo {
         }
 
         return results;
+    }
+
+    public addOrUpdateProductLocation(l: IProductLocation){
+        let location = new ProductLocationModel(l);
+
+        // ProductLocationModel.findOneAndUpdate(
+        //     {productId: location.productId}, 
+        //     {$set: {coords: location.coords}}, 
+        //     {upsert: true, setDefaultsOnInsert: true, new: true}, 
+        //     (err, result) => {
+        //     return result;
+        // });
+
+        return location;
+    }
+
+    public getAll(): IProductLocation[] {
+        // ProductLocationModel.find((err, result) => {
+        //     if(err){
+
+        //     }
+        //     return result;
+        // })
+        let r = new ProductLocationModel();
+        return [r];
     }
 }
