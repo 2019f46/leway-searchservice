@@ -1,5 +1,6 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import searchController from "./Controllers/searchController";
 
 class App {
 
@@ -21,6 +22,7 @@ class App {
     }
 
     private setRoutes(): void {
+        this.app.use('/api/test', searchController);
     }
 }
 

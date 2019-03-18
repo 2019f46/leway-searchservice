@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { IProductRepo, ProductRepo } from "Repository/ProductRepo";
+import { IProductRepo, ProductRepo } from "../Repository/ProductRepo";
 
 /**
  * The search controller, that will serve the endpoint /api/search
@@ -25,9 +25,15 @@ class SearchController {
   public getProducts(req: Request, res: Response, next) {
     let query = req.params.query;
 
+    ////////////// Alternatively make function async and just await the result instead of "then" //////////////
     this.productRepo.findProducts(query).then(prod => {
-      res.send(prod);
+      if (!prod) {
+        res.status(500).send();
+      }
+      res.status(200).send(prod);
     });
+    console.log(query);
+    ////////////// END //////////////
 
     // Get the product list
 

@@ -10,6 +10,6 @@ export class ProductRepo implements IProductRepo {
     public findProducts = async (product: string): Promise<IProduct[]> => {
         let products = await axios.get("https://httpbin.org/get");
         // map products over to an actual product or json parse it, before returning
-        return products as any;
+        return [{ name: "ggWP" }] as any;
     }
 }
