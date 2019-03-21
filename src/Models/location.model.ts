@@ -21,7 +21,7 @@ export const CoordSchema: Schema = new Schema({
 });
 
 export const ProductLocationSchema: Schema = new Schema({
-  productID: {
+  productId: {
     type: String,
     required: true
   },

@@ -2,11 +2,13 @@ import { IProductLocation, ProductLocationModel } from "../Models/location.model
 import { connect, connection } from "mongoose";
 import { SharedStrings } from "../Shared/SharedStrings";
 
+
+
 /** Location Repository Interface */
 export interface ILocationRepo {
     findProductLocations: (ids: String[]) => IProductLocation[];
-    addOrUpdateProductLocation: (l: IProductLocation) => IProductLocation;
-    getAll: () => IProductLocation[];
+    addOrUpdateProductLocation: (l: IProductLocation) => Promise<IProductLocation>;
+    getAll: () => Promise<IProductLocation[]>;
 }
 
 /**
@@ -46,28 +48,16 @@ export class LocationRepo implements ILocationRepo {
         return results;
     }
 
-    public addOrUpdateProductLocation(l: IProductLocation){
+    public addOrUpdateProductLocation(l: IProductLocation): Promise<IProductLocation>{
         let location = new ProductLocationModel(l);
 
-        // ProductLocationModel.findOneAndUpdate(
-        //     {productId: location.productId}, 
-        //     {$set: {coords: location.coords}}, 
-        //     {upsert: true, setDefaultsOnInsert: true, new: true}, 
-        //     (err, result) => {
-        //     return result;
-        // });
-
-        return location;
+        return ProductLocationModel.findOneAndUpdate(
+            {productId: location.productId}, 
+            {$set: {coords: location.coords}}, 
+            {upsert: true, setDefaultsOnInsert: true, new: true}).exec();
     }
 
-    public getAll(): IProductLocation[] {
-        // ProductLocationModel.find((err, result) => {
-        //     if(err){
-
-        //     }
-        //     return result;
-        // })
-        let r = new ProductLocationModel();
-        return [r];
+    public getAll(): Promise<IProductLocation[]> {
+        return ProductLocationModel.find().exec();
     }
 }
