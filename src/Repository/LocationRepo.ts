@@ -35,18 +35,6 @@ export class LocationRepo implements ILocationRepo {
      * @returns IProductLocation array, with all matching locations
      */
     public findProductLocations(ids: String[]): Promise<IProductLocation[]> {
-        // let results: IProductLocation[] = [];
-
-        // for (let id of ids) {
-        //     ProductLocationModel.find({ productId: id }, (err, model) => {
-        //         if (!err) {
-        //             results.push(model as any);
-        //         }
-        //     });
-        // }
-
-        // return results;
-
         return ProductLocationModel.find({ productId: { $in: ids }}).exec();
     }
 
