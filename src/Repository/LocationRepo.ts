@@ -38,6 +38,11 @@ export class LocationRepo implements ILocationRepo {
         return ProductLocationModel.find({ productId: { $in: ids }}).exec();
     }
 
+    /**
+     * Finds a location based on ID, and updates or creates it in the db
+     * @param l New location for update or creation
+     * @returns New location
+     */
     public addOrUpdateProductLocation(l: IProductLocation): Promise<IProductLocation>{
         let location = new ProductLocationModel(l);
 
@@ -47,6 +52,10 @@ export class LocationRepo implements ILocationRepo {
             {upsert: true, setDefaultsOnInsert: true, new: true}).exec();
     }
 
+    /**
+     * Gets all locations in the db
+     * @returns A list of all product locations
+     */
     public getAll(): Promise<IProductLocation[]> {
         return ProductLocationModel.find().exec();
     }

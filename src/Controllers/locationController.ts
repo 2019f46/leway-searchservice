@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 import { LocationRepo, ILocationRepo } from "../Repository/LocationRepo";
-import { IProductLocation, ProductLocationModel } from "../Models/location.model";
+import { IProductLocation } from "../Models/location.model";
 
 /**
  * Maps to /api/location
@@ -36,8 +36,6 @@ class LocationController {
       });
   }
 
-  public getLocation(req: Request, res: Response, next) {}
-
   /**
    * Used to get all product locations
    * @param req Not used
@@ -57,7 +55,6 @@ class LocationController {
 
   /** Sets routes, called in constructor */
   public route() {
-    this.locationRouter.get("/:location", this.getLocation.bind(this));
     this.locationRouter.get("/", this.getLocations.bind(this));
     this.locationRouter.put("/", this.updateLocation.bind(this));
   }

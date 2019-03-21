@@ -1,14 +1,21 @@
 import { Document, Schema, Model, model } from "mongoose";
 
+/** Product location model */
 export interface IProductLocation extends Document {
+  /** Product ID - Foreign key to a product */
   productId: String;
+  /** Coordinates of said product */
   coords: ICoord;
 }
 
+/** Coordinate model */
 export interface ICoord extends Document {
+  /** X coordinate */
   x: Number;
+  /** Y Coordinate */
   y: Number;
 }
+
 export const CoordSchema: Schema = new Schema({
   x: {
     type: Number,
