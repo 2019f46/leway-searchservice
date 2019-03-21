@@ -6,7 +6,7 @@ import { SharedStrings } from "../Shared/SharedStrings";
 
 /** Location Repository Interface */
 export interface ILocationRepo {
-    findProductLocations: (ids: String[]) => IProductLocation[];
+    findProductLocations: (ids: String[]) => Promise<IProductLocation[]>;
     addOrUpdateProductLocation: (l: IProductLocation) => Promise<IProductLocation>;
     getAll: () => Promise<IProductLocation[]>;
 }
@@ -34,18 +34,20 @@ export class LocationRepo implements ILocationRepo {
      * @param ids List of IDs to find
      * @returns IProductLocation array, with all matching locations
      */
-    public findProductLocations(ids: String[]): IProductLocation[] {
-        let results: IProductLocation[] = [];
+    public findProductLocations(ids: String[]): Promise<IProductLocation[]> {
+        // let results: IProductLocation[] = [];
 
-        for (let id in ids) {
-            ProductLocationModel.find({ productId: id }, (err, model) => {
-                if (!err) {
-                    results.push(model as any);
-                }
-            });
-        }
+        // for (let id of ids) {
+        //     ProductLocationModel.find({ productId: id }, (err, model) => {
+        //         if (!err) {
+        //             results.push(model as any);
+        //         }
+        //     });
+        // }
 
-        return results;
+        // return results;
+
+        return ProductLocationModel.find({ productId: { $in: ids }}).exec();
     }
 
     public addOrUpdateProductLocation(l: IProductLocation): Promise<IProductLocation>{

@@ -1,5 +1,8 @@
 import { Request, Response, Router } from "express";
 import { IProductRepo, ProductRepo } from "../Repository/ProductRepo";
+import { IProduct } from "../Models/product.model";
+import { ILocationRepo, LocationRepo } from "../Repository/LocationRepo";
+import { IProductLocation } from "../Models/location.model";
 
 /**
  * The search controller, that will serve the endpoint /api/search
@@ -8,12 +11,16 @@ import { IProductRepo, ProductRepo } from "../Repository/ProductRepo";
 class SearchController {
   /** Router */
   public searchRouter: Router;
+  /** Product repository */
   public productRepo: IProductRepo;
+  /** Location repository */
+  public locationRepo: ILocationRepo;
 
   public constructor() {
     this.searchRouter = Router();
     this.route();
     this.productRepo = new ProductRepo();
+    this.locationRepo = new LocationRepo();
   }
 
   /**
@@ -22,26 +29,39 @@ class SearchController {
    * @param res A list of products matching the query, with locations
    * @param next Not used
    */
-  public getProducts(req: Request, res: Response, next) {
+  public async getProducts(req: Request, res: Response, next) {
     let query = req.params.query;
 
-    ////////////// Alternatively make function async and just await the result instead of "then" //////////////
-    this.productRepo.findProducts(query).then(prod => {
-      if (!prod) {
-        res.status(500).send();
-      }
-      res.status(200).send(prod);
-    });
-    console.log(query);
-    ////////////// END //////////////
-
     // Get the product list
+    let prods: IProduct[];
+    try {
+      prods = await this.productRepo.findProducts(query);
+    } catch (error) {
+      res.status(500).send(error.message);
+      return;
+    }
 
     // Get the location
+    let pIds = prods.map(p => p.id);
+    let locs;
+    try {
+      locs = await this.locationRepo.findProductLocations(pIds);
+    } catch (error) {
+      res.status(500).send(error.message);
+      return;
+    }
 
     // Join the list
+    for (let prod of prods) {
+      // Find and add coords
+      let location: IProductLocation = locs.find(obj => {
+        return obj.productId === prod.id;
+      });
+      if (location) prod.location = location.coords;
+    }
 
-    // 
+    // Return the response
+    res.status(200).send(prods);
   }
 
   /** Sets routes, called in constructor */
