@@ -2,8 +2,6 @@ import { IProductLocation, ProductLocationModel } from "../Models/location.model
 import { connect, connection } from "mongoose";
 import { SharedStrings } from "../Shared/SharedStrings";
 
-
-
 /** Location Repository Interface */
 export interface ILocationRepo {
     findProductLocations: (ids: String[]) => Promise<IProductLocation[]>;

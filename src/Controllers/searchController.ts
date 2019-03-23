@@ -41,6 +41,11 @@ class SearchController {
       return;
     }
 
+    if(prods.length === 0) {
+      res.status(400).send();
+      return;
+    }
+
     // Get the location
     let pIds = prods.map(p => p.id);
     let locs;
