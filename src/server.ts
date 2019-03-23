@@ -14,15 +14,6 @@ app.use(
   })
 );
 
-// Middleware for setting cors related headers in response
-app.use(function(req, res, next) {
-  res
-    .header("Access-Control-Allow-Origin", "*")
-    .header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE")
-    .header("Access-Control-Allow-Headers", "SessionId, Content-Type");
-  next();
-});
-
 // Listen on port
 app.listen(PORT, () => {
   console.log("Express server listening on port " + PORT);

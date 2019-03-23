@@ -33,6 +33,15 @@ class App {
   }
 
   private setRoutes(): void {
+    // Middleware for setting cors related headers in response
+    this.app.use(function(req, res, next) {
+      res.append("Access-Control-Allow-Origin", "*");
+      res.append("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+      res.append("Access-Control-Allow-Headers", "SessionId, Content-Type");
+      next();
+    });
+    
+    // ROUTES
     this.app.use("/api/search", searchController);
     this.app.use("/api/location", locationController);
   }
