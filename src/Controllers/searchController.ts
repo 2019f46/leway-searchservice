@@ -37,12 +37,16 @@ class SearchController {
     try {
       prods = await this.productRepo.findProducts(query);
     } catch (error) {
-      res.status(500).send(error.message);
+      if (error.response.status === 404) {
+        res.status(404).send();
+      } else {
+        res.status(500).send(error.message);
+      }
       return;
     }
 
-    if(prods.length === 0) {
-      res.status(400).send();
+    if (prods.length === 0) {
+      res.status(404).send();
       return;
     }
 
