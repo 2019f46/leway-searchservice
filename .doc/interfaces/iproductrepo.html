@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ILocationRepo | searchservice</title>
+	<title>IProductRepo | searchservice</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_repository_locationrepo_.html">&quot;Repository/LocationRepo&quot;</a>
-				</li>
-				<li>
-					<a href="_repository_locationrepo_.ilocationrepo.html">ILocationRepo</a>
+					<a href="iproductrepo.html">IProductRepo</a>
 				</li>
 			</ul>
-			<h1>Interface ILocationRepo</h1>
+			<h1>Interface IProductRepo</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Location Repository Interface</p>
+						<p>Product Repository Interface</p>
 					</div>
 				</div>
 			</section>
@@ -80,14 +77,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ILocationRepo</span>
+						<span class="target">IProductRepo</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../classes/_repository_locationrepo_.locationrepo.html" class="tsd-signature-type">LocationRepo</a></li>
+					<li><a href="../classes/productrepo.html" class="tsd-signature-type">ProductRepo</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -97,9 +94,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_repository_locationrepo_.ilocationrepo.html#addorupdateproductlocation" class="tsd-kind-icon">add<wbr>OrUpdate<wbr>Product<wbr>Location</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_repository_locationrepo_.ilocationrepo.html#findproductlocations" class="tsd-kind-icon">find<wbr>Product<wbr>Locations</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_repository_locationrepo_.ilocationrepo.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iproductrepo.html#findproducts" class="tsd-kind-icon">find<wbr>Products</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,12 +103,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="addorupdateproductlocation" class="tsd-anchor"></a>
-					<h3>add<wbr>OrUpdate<wbr>Product<wbr>Location</h3>
-					<div class="tsd-signature tsd-kind-icon">add<wbr>OrUpdate<wbr>Product<wbr>Location<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="findproducts" class="tsd-anchor"></a>
+					<h3>find<wbr>Products</h3>
+					<div class="tsd-signature tsd-kind-icon">find<wbr>Products<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Repository/LocationRepo.ts:8</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Repository/ProductRepo.ts#L7">Repository/ProductRepo.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -121,73 +116,17 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>l<span class="tsd-signature-symbol">: </span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>product<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="iproduct.html" class="tsd-signature-type">IProduct</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5>l: <a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a></h5>
+												<h5>product: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="findproductlocations" class="tsd-anchor"></a>
-					<h3>find<wbr>Product<wbr>Locations</h3>
-					<div class="tsd-signature tsd-kind-icon">find<wbr>Product<wbr>Locations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Repository/LocationRepo.ts:7</li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>ids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>ids: <span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">[]</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="getall" class="tsd-anchor"></a>
-					<h3>get<wbr>All</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Repository/LocationRepo.ts:9</li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_models_location_model_.iproductlocation.html" class="tsd-signature-type">IProductLocation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="iproduct.html" class="tsd-signature-type">IProduct</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -202,58 +141,64 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_controllers_locationcontroller_.html">"<wbr>Controllers/location<wbr>Controller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_controllers_searchcontroller_.html">"<wbr>Controllers/search<wbr>Controller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_location_model_.html">"<wbr>Models/location.model"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_product_model_.html">"<wbr>Models/product.model"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_repository_locationrepo_.html">"<wbr>Repository/<wbr>Location<wbr>Repo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_repository_productrepo_.html">"<wbr>Repository/<wbr>Product<wbr>Repo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_shared_sharedstrings_.html">"<wbr>Shared/<wbr>Shared<wbr>Strings"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_.html">"app"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_.html">"server"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_repository_locationrepo_.locationrepo.html" class="tsd-kind-icon">Location<wbr>Repo</a>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="../classes/app.html" class="tsd-kind-icon">App</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="../classes/locationcontroller.html" class="tsd-kind-icon">Location<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/locationrepo.html" class="tsd-kind-icon">Location<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/productrepo.html" class="tsd-kind-icon">Product<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="../classes/searchcontroller.html" class="tsd-kind-icon">Search<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/sharedstrings.html" class="tsd-kind-icon">Shared<wbr>Strings</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="icoord.html" class="tsd-kind-icon">ICoord</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="ilocationrepo.html" class="tsd-kind-icon">ILocation<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="iproduct.html" class="tsd-kind-icon">IProduct</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="iproductlocation.html" class="tsd-kind-icon">IProduct<wbr>Location</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_repository_locationrepo_.ilocationrepo.html" class="tsd-kind-icon">ILocation<wbr>Repo</a>
+					<li class="current tsd-kind-interface">
+						<a href="iproductrepo.html" class="tsd-kind-icon">IProduct<wbr>Repo</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_repository_locationrepo_.ilocationrepo.html#addorupdateproductlocation" class="tsd-kind-icon">add<wbr>OrUpdate<wbr>Product<wbr>Location</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_repository_locationrepo_.ilocationrepo.html#findproductlocations" class="tsd-kind-icon">find<wbr>Product<wbr>Locations</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_repository_locationrepo_.ilocationrepo.html#getall" class="tsd-kind-icon">get<wbr>All</a>
+								<a href="iproductrepo.html#findproducts" class="tsd-kind-icon">find<wbr>Products</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#coordschema" class="tsd-kind-icon">Coord<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="../globals.html#port" class="tsd-kind-icon">PORT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#productlocationmodel" class="tsd-kind-icon">Product<wbr>Location<wbr>Model</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#productlocationschema" class="tsd-kind-icon">Product<wbr>Location<wbr>Schema</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

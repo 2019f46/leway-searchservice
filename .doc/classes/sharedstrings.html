@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IProduct | searchservice</title>
+	<title>SharedStrings | searchservice</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_models_product_model_.html">&quot;Models/product.model&quot;</a>
-				</li>
-				<li>
-					<a href="_models_product_model_.iproduct.html">IProduct</a>
+					<a href="sharedstrings.html">SharedStrings</a>
 				</li>
 			</ul>
-			<h1>Interface IProduct</h1>
+			<h1>Class SharedStrings</h1>
 		</div>
 	</div>
 </header>
@@ -72,8 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Product model interface
-						Is used to represent the products on the API, not necaserily in the database</p>
+						<p>Shared Strings is a public and static class
+							that contains all the strings needed across the backend,
+						like connection strings.</p>
 					</div>
 				</div>
 			</section>
@@ -81,7 +79,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IProduct</span>
+						<span class="target">SharedStrings</span>
 					</li>
 				</ul>
 			</section>
@@ -92,13 +90,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#image" class="tsd-kind-icon">image</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#location" class="tsd-kind-icon">location</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#price" class="tsd-kind-icon">price</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_product_model_.iproduct.html#quantity" class="tsd-kind-icon">quantity</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#dbname" class="tsd-kind-icon">db<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#dbpassword" class="tsd-kind-icon">db<wbr>Password</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#dburl" class="tsd-kind-icon">db<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#dbuser" class="tsd-kind-icon">db<wbr>User</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#productserviceconnection" class="tsd-kind-icon">product<wbr>Service<wbr>Connection</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sharedstrings.html#searchproducturl" class="tsd-kind-icon">search<wbr>Product<wbr>Url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,108 +103,93 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="description" class="tsd-anchor"></a>
-					<h3>description</h3>
-					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dbname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> db<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;wayfinder&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:16</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L16">Shared/SharedStrings.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Product description</p>
+							<p>Database name</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dbpassword" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> db<wbr>Password</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>Password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;elBackend1&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:8</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L20">Shared/SharedStrings.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Identifyer</p>
+							<p>Database password</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="image" class="tsd-anchor"></a>
-					<h3>image</h3>
-					<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dburl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> db<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&#x60;mongodb://${SharedStrings.dbUser}:${SharedStrings.dbPassword}@ds163835.mlab.com:63835/${SharedStrings.dbName}&#x60;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:10</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L22">Shared/SharedStrings.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>URL to an image</p>
+							<p>Database connecion string</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="location" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> location</h3>
-					<div class="tsd-signature tsd-kind-icon">location<span class="tsd-signature-symbol">:</span> <a href="_models_location_model_.icoord.html" class="tsd-signature-type">ICoord</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dbuser" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> db<wbr>User</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>User<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;backend&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:20</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L18">Shared/SharedStrings.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Product location. Might not exist.</p>
+							<p>Database user</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="productserviceconnection" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> product<wbr>Service<wbr>Connection</h3>
+					<div class="tsd-signature tsd-kind-icon">product<wbr>Service<wbr>Connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://wayfinder-productservice.herokuapp.com&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:12</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L10">Shared/SharedStrings.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Product name</p>
+							<p>URL for the product service</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="price" class="tsd-anchor"></a>
-					<h3>price</h3>
-					<div class="tsd-signature tsd-kind-icon">price<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="searchproducturl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> search<wbr>Product<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">search<wbr>Product<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span><span class="tsd-signature-symbol"> =&nbsp;&#x60;${SharedStrings.productServiceConnection}/api/product/&#x60;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Models/product.model.ts:18</li>
+							<li>Defined in <a href="https://github.com/2019f46/leway-searchservice/blob/45c3a21/src/Shared/SharedStrings.ts#L12">Shared/SharedStrings.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Product price</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="quantity" class="tsd-anchor"></a>
-					<h3>quantity</h3>
-					<div class="tsd-signature tsd-kind-icon">quantity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Models/product.model.ts:14</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Amounts of product in the store</p>
+							<p>API endpoint for getting products on the product service</p>
 						</div>
 					</div>
 				</section>
@@ -219,67 +201,79 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_controllers_locationcontroller_.html">"<wbr>Controllers/location<wbr>Controller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_controllers_searchcontroller_.html">"<wbr>Controllers/search<wbr>Controller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_location_model_.html">"<wbr>Models/location.model"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_models_product_model_.html">"<wbr>Models/product.model"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_repository_locationrepo_.html">"<wbr>Repository/<wbr>Location<wbr>Repo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_repository_productrepo_.html">"<wbr>Repository/<wbr>Product<wbr>Repo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_shared_sharedstrings_.html">"<wbr>Shared/<wbr>Shared<wbr>Strings"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_.html">"app"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_.html">"server"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="app.html" class="tsd-kind-icon">App</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="locationcontroller.html" class="tsd-kind-icon">Location<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="locationrepo.html" class="tsd-kind-icon">Location<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="productrepo.html" class="tsd-kind-icon">Product<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-not-exported">
+						<a href="searchcontroller.html" class="tsd-kind-icon">Search<wbr>Controller</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_models_product_model_.iproduct.html" class="tsd-kind-icon">IProduct</a>
+					<li class="current tsd-kind-class">
+						<a href="sharedstrings.html" class="tsd-kind-icon">Shared<wbr>Strings</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#description" class="tsd-kind-icon">description</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#dbname" class="tsd-kind-icon">db<wbr>Name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#dbpassword" class="tsd-kind-icon">db<wbr>Password</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#image" class="tsd-kind-icon">image</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#dburl" class="tsd-kind-icon">db<wbr>Url</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#location" class="tsd-kind-icon">location</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#dbuser" class="tsd-kind-icon">db<wbr>User</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#name" class="tsd-kind-icon">name</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#productserviceconnection" class="tsd-kind-icon">product<wbr>Service<wbr>Connection</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#price" class="tsd-kind-icon">price</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_models_product_model_.iproduct.html#quantity" class="tsd-kind-icon">quantity</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sharedstrings.html#searchproducturl" class="tsd-kind-icon">search<wbr>Product<wbr>Url</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/icoord.html" class="tsd-kind-icon">ICoord</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ilocationrepo.html" class="tsd-kind-icon">ILocation<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/iproduct.html" class="tsd-kind-icon">IProduct</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/iproductlocation.html" class="tsd-kind-icon">IProduct<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/iproductrepo.html" class="tsd-kind-icon">IProduct<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#coordschema" class="tsd-kind-icon">Coord<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="../globals.html#port" class="tsd-kind-icon">PORT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#productlocationmodel" class="tsd-kind-icon">Product<wbr>Location<wbr>Model</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#productlocationschema" class="tsd-kind-icon">Product<wbr>Location<wbr>Schema</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

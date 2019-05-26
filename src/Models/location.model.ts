@@ -1,4 +1,4 @@
-import { Document, Schema, Model, model } from "mongoose";
+import { Document, Model, model, Schema } from "mongoose";
 
 /** Product location model */
 export interface IProductLocation extends Document {
@@ -16,6 +16,7 @@ export interface ICoord extends Document {
   y: Number;
 }
 
+/** Mongoose schema, that follows the Coordinate interface. */
 export const CoordSchema: Schema = new Schema({
   x: {
     type: Number,
@@ -27,6 +28,7 @@ export const CoordSchema: Schema = new Schema({
   }
 });
 
+/** Mongoose schema, that follows the IProduct interface. */
 export const ProductLocationSchema: Schema = new Schema({
   productId: {
     type: String,
